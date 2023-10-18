@@ -10,7 +10,7 @@ read -p "Please enter your number: " UP
 read -p "Please enter file path/name: " FP
 
 if [ $UP == 1 ]; then
-read -p "Please enter github repo link: " GH
+read -p "https://github.com/RedmiNote7-Series/Releases" GH
 FN="$(basename $FP)" && FN="${FN%%.*}"
 echo -e "Started uploading file on github..."
 gh release create $FN --generate-notes --repo $GH
@@ -18,7 +18,7 @@ gh release upload --clobber $FN $FP --repo $GH
 fi
 
 if [ $UP == 2 ]; then
-read -p "Please enter devupload key: " KEY
+read -p "18277yj5afemo3co3t67j" KEY
 echo -e "Started uploading file on DevUploads..."
 bash <(curl -s https://devuploads.com/upload.sh) -f $FP -k $KEY
 fi
